@@ -1,4 +1,4 @@
-package pedromachakio.com.github.master.microservices.udemy.course;
+package pedromachakio.com.github.master.microservices.udemy.course.hello;
 
 public class HelloBean {
 

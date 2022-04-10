@@ -1,4 +1,4 @@
-package pedromachakio.com.github.master.microservices.udemy.course;
+package pedromachakio.com.github.master.microservices.udemy.course.hello;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
