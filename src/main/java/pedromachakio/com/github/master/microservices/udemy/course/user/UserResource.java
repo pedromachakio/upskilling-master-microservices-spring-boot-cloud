@@ -1,9 +1,7 @@
 package pedromachakio.com.github.master.microservices.udemy.course.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Objects;
@@ -21,9 +19,15 @@ public class UserResource {
 
     @GetMapping("/users/{id}")
     public User getSpecificUser(@PathVariable int id) {
-        if (Objects.nonNull(userService.findSpecificUser(id))){
-            return userService.findSpecificUser(id);
+        User specificUser = userService.findSpecificUser(id);
+        if (Objects.nonNull(specificUser)) {
+            return specificUser;
         }
         return null;
+    }
+
+    @PostMapping("/users")
+    public void saveUser(@RequestBody User user) {
+        User savedUser = userService.save(user);
     }
 }
